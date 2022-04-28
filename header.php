@@ -27,7 +27,7 @@
                     <div class="header-contact">
                         <i class="fa fa-clock-o"></i>
                         <h3>Time </h3>
-                        <p>8:00am - 6:00pm</p>
+                        <p>10:00am - 6:00pm</p>
                     </div>
                    
                  
