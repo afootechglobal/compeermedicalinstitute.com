@@ -1,0 +1,443 @@
+body{
+margin:0px;
+padding:0px;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+
+
+.header-div{
+position: fixed;
+height:auto;
+width:100%;
+margin:0px;
+padding:0px;
+z-index:1000;
+
+}
+
+.header-div .header-top-div{
+background:#FFF;
+width:100%;
+
+}
+.header-div .header-top-div .top-div-in{
+width:90%;
+height:70px;
+margin:auto;
+
+}
+
+.header-div .header-top-div .top-div-in .logo-div{
+height: 70px;
+width:200px;
+float: left;
+
+}
+
+.header-div .header-top-div .top-div-in .logo-div img{
+height: 60px;
+width: 200px;
+margin-top: 5px;
+
+}
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div{
+width: 80%;
+}
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .header-contact{
+width: 28%;
+font-size: 14px;
+float: left;
+}
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .header-contact i{
+font-size: 35px;
+padding: 15px 10px 0px 5px;
+float: left;
+}
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .header-contact h3 {
+padding-top: 15px;
+margin: 0px;
+}
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .header-contact p{
+margin: 0px;
+}
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .mail-div{
+margin-left: 5%;
+}
+
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .btn{
+height: 50px;
+width: 100px;
+padding: 5px;
+line-height: 20px;
+margin-top: 10px;
+border: none;
+border-radius: 3px;
+background: #CC9966;
+float: right;
+color: #FFF;
+font-weight: bold;
+cursor:pointer;
+font-family: Arial, Helvetica, sans-serif;
+transition:all 0.2s ease-in 0.2s;
+-moz-transition:all 0.2s ease-in 0.2s;
+-webkit-transition:all 0.2s ease-in 0.2s;
+-ms-transition:all 0.2s ease-in 0.2s;
+-o-transition:all 0.2s ease-in 0.2s;
+
+}
+
+
+.header-div .header-top-div .top-div-in .header-contact-back-div .btn:hover{
+background: #996633;
+color: #FFF;
+}
+
+
+
+
+
+
+.header-div .header-bottom .nav-div .btn{
+height: 40px;
+width: 100px;
+padding: 5px;
+line-height: 20px;
+margin-top: 2.5px;
+border: none;
+border-radius: 3px;
+background: #CC9966;
+float: right;
+color: #FFF;
+font-weight: bold;
+cursor:pointer;
+font-family: Arial, Helvetica, sans-serif;
+transition:all 0.2s ease-in 0.2s;
+-moz-transition:all 0.2s ease-in 0.2s;
+-webkit-transition:all 0.2s ease-in 0.2s;
+-ms-transition:all 0.2s ease-in 0.2s;
+-o-transition:all 0.2s ease-in 0.2s;
+
+
+}
+
+
+
+.background-div{
+height: 100%;
+width: 100%;
+background: url(../../image/registration3.png);
+background-size: cover;
+position: absolute;
+overflow:auto;
+}
+
+
+
+
+
+.login-div{
+width:470px;
+min-height:300px;
+border-radius:7px;
+background:#FFF;opacity: 0.9;
+margin:120px auto;
+}
+
+
+
+.background-div .login-div .div-in{
+padding:25px 0px 20px 0px;
+color:#333333;
+width:90%;
+margin:auto;
+}
+
+.background-div .login-div .div-in #login_div{
+display: block;
+}
+
+.background-div .login-div .div-in .next_div{
+display: none;
+}
+
+.background-div .login-div .div-in #next-1,.background-div.login-div .div-in #login_div{
+display: block;
+}
+.background-div .login-div .div-in #next-1,.background-div.login-div .div-in #check-password{
+display: block;
+}
+
+
+
+
+
+
+.background-div .login-div .div-in h1{
+font-size:24px;
+margin:0px;
+padding:0px;
+line-height:30px;
+color: hsla(0, 100%, 40%, 0.774);
+}
+
+.background-div .login-div .div-in P{
+font-size: 13px;
+    }
+
+.background-div .login-div .div-in .next_div .title{
+padding:10px;
+font-size:14px;
+font-family: Arial, Helvetica, sans-serif;
+color:#333333;
+}
+
+.background-div .login-div .div-in .next_div .title span{
+color:#CC3300 ;
+font-size:18px;
+}
+
+.background-div .login-div .div-in .next_div .text_field{
+margin-bottom:10px;
+border-radius:5px;
+border:#CCC 1px solid;
+padding:15px 5% 15px 5%;
+width:90%;
+font-size:13px;
+font-family: Arial, Helvetica, sans-serif;
+color:#1e1e1e;
+-webkit-text-fill-color: #1e1e1e;
+-webkit-transition:all ease 0.2s;
+-ms-transition:all ease 0.2s;
+-o-transition:all ease 0.2s;
+-moz-transition:all ease 0.2s;
+-webkit-appearance: none;
+outline: none !important;
+}
+
+
+.background-div .login-div .div-in .next_div .complain{
+border:#F00 1px solid;
+-moz-appearance:none;
+-moz-transform:scale(1.02) translate(1px,0px);
+-webkit-transform:scale(1.02) translate(1px,0px);
+}
+
+
+.background-div .login-div .div-in .next_div  .text_field:focus{
+border:#ce7419 1px solid;
+-moz-appearance:none;
+-moz-transform:scale(1) translate(1px,0px);
+-webkit-transform:scale(1) translate(1px,0px);
+}
+
+
+
+
+
+
+
+.background-div .login-div .div-in .next_div .btn{
+border:none;
+margin: auto;
+height:50px;
+width:100%;
+background: #996633;
+color:#FFF;
+border-radius:5px;
+font-family: Arial, Helvetica, sans-serif;
+font-size:18px;
+transition:all 0.2s ease-in 0.2s;
+-moz-transition:all 0.2s ease-in 0.2s;
+-webkit-transition:all 0.2s ease-in 0.2s;
+-ms-transition:all 0.2s ease-in 0.2s;
+-o-transition:all 0.2s ease-in 0.2s;
+cursor:pointer;
+}
+
+
+.background-div .login-div .div-in .next_div .btn .fa{
+padding: 0px 5px;
+}
+
+
+
+.background-div .login-div .div-in .next_div .btn:hover{
+    background: #CC9966;
+}
+
+.background-div .login-div .div-in .text-info{
+text-align:left;
+padding:10px;
+font-size:12px;
+}
+.background-div .login-div .div-in .text-info span{
+    color: hsla(0, 100%, 40%, 0.774);
+font-weight:bold;
+cursor:pointer;
+}
+
+.background-div .login-div .div-in .text-info span:hover{
+color: #999999 ;
+}
+
+
+@media all and (max-width:340px){
+.background-div .login-div .div-in .text-info span{
+font-size: 11px;
+}
+
+}
+
+
+.background-div .login-div .div-in .next_div .btn-back-div{
+width:25%;
+}
+
+
+
+.background-div .login-div .div-in .next_div .btn-next-div{
+margin-left: .5%;
+width:73%;
+}
+
+
+@media all and (max-width:330px){
+.background-div .login-div .div-in .next_div .btn-back-div{
+width:27%;
+}
+
+
+
+.background-div .login-div .div-in .next_div .btn-next-div{
+
+width:70%;
+
+}
+}
+
+
+
+
+
+
+
+.background-div .login-div .login-footer{
+height:50px;
+padding-top:20px;
+border-top:#999 1px dashed;
+text-align:center;
+font-size:14px;
+color:#333;
+}
+.background-div .login-div .login-footer span{
+color:#555;
+font-weight: bold;
+
+}
+
+.background-div .login-div .login-footer span:hover{
+color: hsla(0, 100%, 40%, 0.774);
+}
+
+
+
+
+
+
+
+@media all and (max-width:610px){
+.background-div .login-div{
+width: 100%;
+}
+
+}
+
+
+
+
+
+
+#success-div{
+background: #33CC99 ;opacity: .9;
+}
+
+#warning-div{
+background: rgba(252, 148, 30, 0.822);
+}
+
+#invalid-div{
+background: hsla(0, 57%, 42%, 0.774);opacity: .85;
+}
+
+
+.alert-div {
+margin-top: 70px;
+height: 70px;
+width: 300px;
+z-index: 200;
+font-size: 12px;
+float: right;
+position: fixed;
+margin-left: calc(100% - 340px);
+color: #fff;
+padding: 5px 10px 5px 5px;
+display: none;
+}
+
+
+.alert-div .alert-logo{
+height: 60px;
+width: 60px;
+float: left;
+margin-top:5px;
+margin-right: 10px;
+border-radius: 100%;
+background: #fff;
+text-align: center;
+}
+
+.alert-div .alert-logo i{
+margin-top: 13px;
+font-size: 33px;
+color: hsla(0, 100%, 40%, 0.774);
+}
+
+.alert-div h3{
+padding: 5px 0px;
+}
+
+.alert-div .alert-logo img{
+height: 60px;
+width: 100%;
+object-fit: cover;
+border-radius: 100%;
+}
+
+  
+  
+  
+
+
+
+
+    
+
+
+
+
