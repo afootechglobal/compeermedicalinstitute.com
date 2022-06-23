@@ -45,6 +45,11 @@ exit;
                 $fectch=mysqli_fetch_array($query);
                 $user_state_name=strtoupper($fectch['state_name']);
 
+                $query=mysqli_query($conn,"SELECT * FROM s_admission_tab WHERE  student_id='$s_student' ");
+                $admission_count=mysqli_num_rows($query);
+                
+                
+
             }
 ?>
 

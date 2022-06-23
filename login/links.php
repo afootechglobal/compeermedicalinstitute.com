@@ -6,16 +6,15 @@
 <!-------------------------------------------------------------->
 <link rel="shortcut icon" type="image-png" href="../image/icon.png"/>
 <link href="style/animate.css" type="text/css" rel="stylesheet" />
-<link href="style/aos.css" type="text/css" rel="stylesheet" />
 <link href="awesome-font/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-<script src="javascript/jquery-library.js"></script>
 
 <link href="style/css.css" type="text/css" rel="stylesheet"/>
-<script src="javascript/scripts.js"></script>
+
 <script src="javascript/aos.js"></script>
-<script src="javascript/jquery.js"></script>
-<script src="javascript/bootstrap.min.js"></script>
+<script src="javascript/jquery-library.js"></script>
+
+<script src="javascript/scripts.js"></script>
+
 <script src="javascript/superplaceholder.js"></script>
 
-<link rel="stylesheet" type="text/css" href="myslide/engine/style.css" />
-	<script type="text/javascript" src="myslide/engine/jquery.js"></script>
+<meta property="og:type" content="Website" />

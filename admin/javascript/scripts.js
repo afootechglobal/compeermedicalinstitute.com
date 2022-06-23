@@ -1,402 +1,258 @@
-
-   
-   
-function _expand_link(divid){
-	$('#'+divid).toggle(500);
-   $('#sdashboard,#myprofile').removeClass('active');
-   $('#dashboard,#admin').removeClass('active');
-   $('#'+divid).addClass('active');
-    $('#s'+divid).addClass('active');
-   
-   }
-
-
-function _log_out(divid){
-	$('#'+divid).toggle(500);
-
-}
-
-  
-function close_btn(){
-   $('.overlay-back-div').html('').fadeOut(600);
-   _get_panel('student_check_list');
-}
-
-  
-function _get_active(divid){
-   $('#sdashboard,#sadmin,#myprofile').removeClass('active');
-   $('#dashboard,#admin').removeClass('active');
-   $('#'+divid).addClass('active');
-    $('#s'+divid).addClass('active');
-}
-
-function _close(){
-   $('.overlay-back-div').html('').fadeOut(600);
-   _get_panel('student_check_list');
-}
-
-  
-function _next_panel(nextid){
-   $('.next_div').hide();
-   $('#'+nextid).fadeIn(1000);   
-   $('.div-pro').hide();
-   $('#'+nextid).fadeIn(1000);   
-   return event.preventDefault(),$("html, .input-div").animate({scrollTop:0},"slow");
-}
-
-
-
-
-function _next_pro(nextid){
-   $('.div-pro').hide();
-   $('#'+nextid).fadeIn(1000);   
-   return event.preventDefault(),$("html, .div-pro").animate({scrollTop:0},"fadeUp");
-}
- 
-
-function _back_pro(nextid){
-   $('.div-pro').hide();
-   $('#'+nextid).fadeIn(1000);  
-   return event.preventDefault(),$("html, .div-pro").animate({scrollTop:0},"fadeUp");
-}
-
-
-
-
- 
-$(window).scroll(function() {
-if ($(this).scrollTop() >= 100 ){ 
-$("#go-top").fadeIn(800).css("display", "block");
-   }
+//////////////////////////////10/2/2022////////////////////////// by Afolabi Taiwo Abayomi
+	
+$(document).ready(function() {
+	function trim(s) {
+            return s.replace( /^\s*/, "" ).replace( /\s*$/, "" );
+        }
+$("#login-info").keydown(function(e){
+	if(e.keyCode==13){
+		_sign_in();
+	}
 });
-
-
-
-  
-
-function _input_check(nextid){
-   var firstname=$('#firstname').val();
-   var lastname=$('#lastname').val();
-   var gender=$('#gender').val();
-   var dob=$('#dob').val();
-   var email=$('#email').val();
-   var phonenumber=$('#phonenumber').val();
-   var address=$('#address').val();
-   var country=$('#country').val();
-   var sat_or_act=$('#sat_or_act').val();
-
-   $('#firstname, #lastname, #gender, #dob, #email, #country, #phonenumber, #address, #country, #sat_or_act').removeClass('complain');
-  
-   if(firstname==''){
-         $('#firstname').addClass('complain');
-      $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-      return event.preventDefault(),$("html, #information, .input-div").animate({scrollTop:0},"fadeUp");
-
-      }else if(lastname==''){
-         $('#lastname').addClass('complain');
-      $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information, .input-div").animate({scrollTop:0},"fadeUp");
-   
-      }else if(gender==''){
-         $('#gender').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information").animate({scrollTop:0},"fadeUp");
-    
-      }else if(dob==''){
-         $('#dob').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information").animate({scrollTop:0},"fadeUp");
-    
-      }else if(email.indexOf('@')<=0){
-         $('#email').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>EMAIL ERROR!<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information, .input-div").animate({scrollTop:0},"fadeUp");
-   
-      }else if(phonenumber==''){
-         $('#phonenumber').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information, .input-div").animate({scrollTop:0},"fadeUp");
-   
-      }else if(address==''){
-         $('#address').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-         return event.preventDefault(),$("html, #information").animate({scrollTop:0},"fadeUp");
-   
-
-      }else if(country==''){
-         $('#country').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-   
-    
-      }else if(sat_or_act==''){
-         $('#sat_or_act').addClass('complain');
-         $('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>THIS FIELD CANNOT BE EMPTY<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-
-   
-     
-      }else{
-         $('.next_div, .div-pro').hide();
-         $('#'+nextid).fadeIn(1000);
-         return event.preventDefault(),$("html, .div-pro").animate({scrollTop:0},"fadeUp");
-
-
-}
-}
-  
-  
-  function _get_panel(view_content,divid) {
-   _get_active(divid);
-    $('.dashboard-main-div ').html('<div class="loading-div animated zoomIn"><img src="image/ajax_loader.gif"/></div>').fadeIn(1000);
-    var action='get_panel';
-    var dataString = 'action='+action+'&view_content='+view_content;
-    $.ajax({
-       type: "POST",
-       url: "config/code.php",
-       data: dataString,
-       cache: false,
-       success: function(html){
-          $('.right-sided-div').html(html);
-       }
-    });
- }
-  
-
-
-
- function _get_slide_panel(view_content) {
-    
-   $('.overlay-back-div').html('<div class="loading-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn('fast');
-   var action='slide_panel';
-   var dataString = 'action='+action+'&view_content='+view_content;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         $('.overlay-back-div').html(html);
-      }
-   });
+});
+	
+	
+	
+	
+function _view_div(ids){
+				  $('#login-info, #reset-password-info').css("display", "none");
+				  $('#'+ids).fadeIn(300).css("display", "block");
 }
 
 
 
+function _sign_in(){ 
+	$('#email').removeClass('complain');
+$('.success-div').hide();
+			var email = $('#email').val();
+			var password = $('#password').val();
+			if((email!='')&&(password!='')){
+				user_login(email,password)
+			}else{
+				$('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+				$('#email').addClass('complain');
+				$('#password').addClass('complain');
+			}
+};
 
 
-function _register_staff() {
-   var firstname=$('#firstname').val();
-   var lastname=$('#lastname').val();
-   var email=$('#email').val();
-   var phonenumber=$('#phonenumber').val();
-   var role=$('#role').val();
-   var status=$('#status').val();
+///////////////////// user login ///////////////////////////////////////////
 
-   var action='register_staff';
-   var dataString = 'action='+action+'&firstname='+firstname+'&lastname='+lastname+'&email='+email+'&phonenumber='+phonenumber+'&role='+role+'&status='+status;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         close_btn();
-         $('#success-div').html('<div class="alert-logo"><img src="../image/tick-2.gif" alt="Hero" /></div><h3>REGISTRATION SUCCESSFUL<h3></div>').fadeIn(500).delay(3000).fadeOut(100);
-         _get_panel('all_staff');
-      }
-   });
+
+		///////////////////// user login ///////////////////////////////////////////
+		function user_login(email,password){
+		var action='login_check';
+
+		//////////////// get btn text ////////////////
+		var btn_text=$('#login-btn').html();
+		$('#login-btn').html('Authenticating...');
+		document.getElementById('login-btn').disabled=true;
+		////////////////////////////////////////////////	
+
+		var dataString ='action='+ action+'&email='+ email + '&password='+ password;
+		$('#login-btn').html('Authenticating...');
+		$.ajax({
+		type: "POST",
+		url: "config/code.php",
+		data: dataString,
+		dataType: 'json',
+		cache: false,
+		success: function(data){
+		$('#login-btn').html(btn_text);
+		document.getElementById('login-btn').disabled=false;
+
+		var scheck = data.check;
+		if(scheck==1){
+					//$('#success-div').html('<div><i class="fa fa-check"></i></div> LOGIN SUCCESSFUL!').fadeIn(500).delay(5000).fadeOut(100);
+			$('#loginform').submit();
+		}else if(scheck==2){
+			$('#invalid-div').html(' <div class="alert-logo"><i class="fa fa-times"></i></div><h3>ACCOUNT SUSPEDNDED</h3><p>Contact the admin</p>').fadeIn(500).delay(5000).fadeOut(100);
+
+		}else{
+		$('#invalid-div').fadeIn(500).delay(5000).fadeOut(100);
+		}
+		$('#login-btn').html('<i class="fa fa-sign-in"></i> Log-In');
+		document.getElementById('login-btn').disabled=false;
+		}
+		});
+		}
+
+
+
+
+
+
+
+
+function _proceed_reset_password(){
+			var reset_pass_email = $('#reset_pass_email').val();
+			if(reset_pass_email==''){
+				$('#reset_pass_email').addClass('complain');
+				$('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+			}else if(reset_pass_email.indexOf('@')<=0){
+				$('#reset_pass_email').addClass('complain');
+				$('#invalid-div').html(' <div class="alert-logo"><i class="fa fa-times"></i></div><h3>INVALID EMAIL ADDRESS</h3><p>check your email and try again.</p>').fadeIn(500).delay(5000).fadeOut(100);
+			}else{
+				$('#reset_pass_email').removeClass('complain');
+			//////////////// get btn text ////////////////
+			var btn_text=$('#reset-pwd-btn').html();
+			$('#reset-pwd-btn').html('PROCESSING...');
+			document.getElementById('reset-pwd-btn').disabled=true;
+			////////////////////////////////////////////////	
+			
+			var action='proceed_reset_password';
+			var dataString ='action='+ action+'&reset_pass_email='+ reset_pass_email;
+			$.ajax({
+			type: "POST",
+			url: "config/code.php",
+			data: dataString,
+			cache: false,
+			dataType: 'json',
+			cache: false,
+			success: function(data){
+				var scheck = data.check;
+				var admin_id = data.admin_id;
+				if(scheck==0){/// invalid email
+					$('#invalid-div').html(' <div class="alert-logo"><i class="fa fa-times"></i></div><h3>INVALID EMAIL ADDRESS</h3><p>check your email and try again.</p>').fadeIn(500).delay(5000).fadeOut(100);
+					$('#reset_pass_email').addClass('complain');
+				}else if(scheck==1){
+					$('#warning-div').html('<div class="alert-logo"><img src="../image/warning.gif" alt="Warning" /></div><h3>ACCOUNT SUSPENDED</h3><p>Contact the admin</p></div').fadeIn(500).delay(3000).fadeOut(100);
+
+					}else{ /// user Active and login successful
+					_reset_password(admin_id);
+				}
+					$('#reset-pwd-btn').html(btn_text);
+					document.getElementById('reset-pwd-btn').disabled=false;
+		}
+	});
+		}
+}
+
+
+
+function _reset_password(admin_id){
+			var action='reset_password';
+		$('#reset-password-info').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+			var dataString ='action='+ action+'&admin_id='+ admin_id;
+			$.ajax({
+			type: "POST",
+			url: "config/code.php",
+			data: dataString,
+			cache: false,
+			success: function(html){$('#reset-password-info').html(html);}
+			});
 }
 
 
 
 
-function _view_staff_list(){
-   _get_active(divid);
-    $('.dashboard-main-div ').html('<div class="loading-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn(1000);
-   var action='view_staff_list';
-   var dataString ='action='+ action;
-   $.ajax({
-   type: "POST",
-   url: local_url,
-   data: dataString,
-   cache: false,
-   success: function(html){
-      $('right-sided-div').html(html);
-   }
-   });
+function _resend_otp(ids,admin_id){
+	var btn_text=$('#'+ids).html();
+	$('#'+ids).html('SENDING...');
+var action='resend_otp';
+var dataString ='action='+ action+'&admin_id='+ admin_id;
+$.ajax({
+type: "POST",
+url: "config/code.php",
+data: dataString,
+cache: false,
+success: function(html){
+		$('#success-div').fadeIn(500).delay(5000).fadeOut(100);
+		$('#'+ids).html(btn_text);
+	}
+});
 }
 
 
-
-
-
-
-
-
-
-
-
-function _profile(view_content,divid) {
-   if(divid!=''){
-      _get_active(divid);
-
-   }
-   $('.dashboard-main-div ').html('<div class="success-back-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn(1000);
-   var action='profile';
-   var dataString = 'action='+action+'&view_content='+view_content;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         $('.right-sided-div').html(html);
-      }
-   });
-}
+var checkpassword = function() {
+	if (document.getElementById('reset_pass_create_password').value == document.getElementById('reset_pass_confirmed_password').value) {
+		document.getElementById('reset_pass_create_password').style.border='#CCC 1px solid';
+		document.getElementById('reset_pass_confirmed_password').style.border='#CCC 1px solid';
+		document.getElementById('message').style.display = 'none';
  
-
-function _staff_profile(view_content,staff_id) {
-   $('.profile-back-div ').html('<div class="success-back-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn(1000);
-   var action='staff_profile';
-   var dataString = 'action='+action+'&view_content='+view_content+'&staff_id='+staff_id;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         $('.right-sided-div').html(html);
-      }
-   });
-}
- 
-
-function _update_profile(staff_id,complain){
-   var firstname=$('#firstname').val();
-   var middlename=$('#middlename').val();
-   var lastname=$('#lastname').val();
-   var email=$('#email').val();
-   var gender=$('#gender').val();
-   var dob=$('#dob').val();
-   var phonenumber=$('#phonenumber').val();
-   var state=$('#state').val();
-   var address=$('#address').val();
-   var religious=$('#religious').val();
-   var role=$('#role').val();
-   var status=$('#status').val();
-   
-   if ((firstname=='')||(lastname=='')||(email.indexOf('@')<=0)||(phonenumber=='')||(address=='')){
-      $('#warning-div').html('<div class="alert-logo"><img src="image/warning.gif" alt="Hero" /></div><h3>This Field Cannot Be Empty<h3></div').fadeIn(500).delay(3000).fadeOut(100);
-      
-   } else {
-      var action='update_profile';
-      var dataString ='action='+action+'&staff_id='+staff_id+'&firstname='+firstname+'&middlename='+middlename+'&lastname='+lastname+'&email='+email+'&gender='+gender+'&dob='+dob+'&phonenumber='+phonenumber+'&state='+state+'&address='+address+'&religious='+religious+'&role='+role+'&status='+status;
-      $.ajax({
-         type: "POST",
-         url: "config/code.php",
-         data: dataString,
-         cache: false,
-         success: function(html){
-            $('#success-div').html('<div class="alert-logo"><img src="../image/tick-2.gif" alt="Hero" /></div><h3>UPDATE SUCCESSFUL<h3></div>').fadeIn(500).delay(3000).fadeOut(100);
-            _staff_profile('staff_profile',staff_id);
-         }
-      });
-   }
-}
-
-
-   
-
-
- 
-
-function view_student_details(view_content,admission_id) {
-   $('.overlay-back-div').html('<div class="success-back-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn(1000);
-   var action='view_student_details';
-   var dataString = 'action='+action+'&view_content='+view_content+'&admission_id='+admission_id;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         $('.overlay-back-div').html(html);
-      }
-   });
-}
+	} else {
+		document.getElementById('reset_pass_create_password').style.border='hsla(0, 100%, 40%, 0.678) 1px solid';
+		document.getElementById('reset_pass_confirmed_password').style.border='hsla(0, 100%, 40%, 0.678) 1px solid';
+	   document.getElementById('message').style.display = 'block';
+	  document.getElementById('message').style.color = 'hsla(0, 100%, 40%, 0.678)';
+	  document.getElementById('message').style.fontSize = '12px';
+	  document.getElementById('message').innerHTML = 'PASSWORD NOT MATCH!';
+	}
+  }
  
 
 
 
 
-function _get_admitted_status(view_content,admission_id) {
-   $('.overlay-back-div').html('<div class="loading-div animated zoomIn"><img src="../image/ajax_loader.gif"/></div>').fadeIn(1000);
-   var action='admitted_status';
-   var dataString = 'action='+action+'&view_content='+view_content+'&admission_id='+admission_id;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      cache: false,
-      success: function(html){
-         $('.overlay-back-div').html(html);
-      }
-   });
+	function _finish_reset_password(admin_id){
+		
+	var reset_pass_otp = $('#reset_pass_otp').val();
+	var reset_pass_create_password = $('#reset_pass_create_password').val();
+	var reset_pass_confirmed_password = $('#reset_pass_confirmed_password').val();
+
+	$('#reset_pass_otp,#reset_pass_create_password,#reset_pass_confirmed_password').removeClass('complain');
+	if(reset_pass_otp==''){
+		$('#reset_pass_otp').addClass('complain');
+		$('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+	}else if (reset_pass_create_password==''){
+		$('#reset_pass_create_password').addClass('complain');
+		$('#reset_pass_otp').removeClass('complain');
+		$('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+	}else if (reset_pass_confirmed_password==''){
+		$('#reset_pass_confirmed_password').addClass('complain');
+		$('#reset_pass_create_password').removeClass('complain');
+		$('#reset_pass_otp').removeClass('complain');
+		$('#warning-div').fadeIn(500).delay(5000).fadeOut(100);
+	}else if(reset_pass_create_password!=reset_pass_confirmed_password){
+		$('#reset_pass_create_password').addClass('complain');
+		$('#reset_pass_create_password').addClass('complain');
+		$('#invalid-div').html('<div class="alert-logo"><i class="fa fa-times"></i></div><h3>PASSWORD ERROR</h3><p>Password Not Match.</p>').fadeIn(500).delay(5000).fadeOut(100);
+	}else{
+		$('#reset_pass_create_password,#reset_pass_confirmed_password').removeClass('complain');
+			//////////////// get btn text ////////////////
+			var btn_text=$('#finish-reset-btn').html();
+			$('#finish-reset-btn').html('PROCESSING...');
+			document.getElementById('finish-reset-btn').disabled=true;
+	////////////////////////////////////////////////	
+		var action='finish_reset_password';
+		var dataString ='action='+ action+'&admin_id='+ admin_id+'&reset_pass_otp='+reset_pass_otp+'&reset_pass_create_password='+ reset_pass_create_password;
+			$.ajax({
+			type: "POST",
+			url: "config/code.php",
+			data: dataString,
+			cache: false,
+			dataType: 'json',
+			cache: false,
+			success: function(data){
+			var scheck = data.check;
+			if(scheck==1){
+				_password_reset_completed(admin_id);
+			}else{
+			$('#invalid-div').html('<div class="alert-logo"><i class="fa fa-times"></i></div><h3>INVALID OTP!</h3><p>please check your eamil or span.</p>	</div>').fadeIn(500).delay(5000).fadeOut(100);
+			$('#reset_pass_otp').addClass('complain');
+			$('#finish-reset-btn').html(btn_text);
+			document.getElementById('finish-reset-btn').disabled=false;
+			}
+			}
+		});
+				
+	}
+	}
+
+function _password_reset_completed(admin_id){
+			var action='password_reset_completed';
+		$('#reset-password-info').html('<div class="ajax-loader">loading...<br><img src="all-images/images/ajax-loader.gif"/></div>').fadeIn(500);
+			var dataString ='action='+ action+'&admin_id='+ admin_id;
+			$.ajax({
+			type: "POST",
+			url: "config/code.php",
+			data: dataString,
+			cache: false,
+			success: function(html){$('#reset-password-info').html(html);}
+			});
 }
 
 
-function _get_admitted_student(admission_id) {
-   var btn_text=$('#admit').html();
-   $('#admit').html('ADMITTING...');
-   document.getElementById('admit').disabled=true;
 
-   var action='admitted_student';
-   var dataString = 'action='+action+'&admission_id='+admission_id;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      dataType: 'json',
-      cache: false,
-      success: function(data){
-         var scheck= data.check;
-         if (scheck==1){
-            $('#success-div').html('<div class="alert-logo"><img src="../image/tick-2.gif" alt="Warning" /></div><h3>ADMITTED SUCCESSFUL<h3></div>').fadeIn(500).delay(3000).fadeOut(100);
-            _get_admitted_status('admitted_status',admission_id);
-         }
+	   
 
-         $('#admit').html(btn_text);
-         document.getElementById('admit').disabled=false;
-         }
-   });
-}
-
-
-
-
-
-function _cancel_admitted_student(admission_id) {
-   var btn_text=$('#admit').html();
-   $('#admit').html('CANCELING...');
-   document.getElementById('admit').disabled=true;
-
-   var action='cancel_admitted_student';
-   var dataString = 'action='+action+'&admission_id='+admission_id;
-   $.ajax({
-      type: "POST",
-      url: "config/code.php",
-      data: dataString,
-      dataType: 'json',
-      cache: false,
-      success: function(data){
-         var scheck= data.check;
-         if (scheck==1){
-            $('#success-div').html('<div class="alert-logo"><img src="../image/tick-2.gif" alt="Warning" /></div><h3>ADMITTED CANCELED SUCCESSFUL<h3></div>').fadeIn(500).delay(3000).fadeOut(100);
-            _get_admitted_status('admitted_status',admission_id);
-         }
-
-         $('#admit').html(btn_text);
-         document.getElementById('admit').disabled=false;
-         }
-   });
-}

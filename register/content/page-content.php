@@ -3,7 +3,8 @@
 
 <?php if ($view_content=='registration'){ ?>
     
-
+  <div class="back-div">
+<div class="reg-back-div animated zoomIn ">
 
   <h4><i class="fa fa-edit"></i> REGISTRATION
         <a href="../index.php"><button class="btn" type=""> <i class="fa fa-arrow-left"></i> Go-Back</button></a>
@@ -62,7 +63,7 @@
 
         <div class="reg-div-in" > 
                 <div class="title">PHONE NUMBER:<span>*</span></div>
-                 <input type="text"  name="phonenumber" id="phonenumber" required class="text_field"  placeholder="ENTER YOUR PHONE NUMBER" title="ENTER YOUR PHONE NUMBER">
+                 <input type="text"  name="phonenumber" onkeypress="isNumber_Check()"  id="phonenumber" required class="text_field"  placeholder="ENTER YOUR PHONE NUMBER" title="ENTER YOUR PHONE NUMBER">
         </div>
 
         <div class="reg-div-in" > 
@@ -72,7 +73,7 @@
 
 
         <div class="reg-div-in" > 
-                <div class="title" style="float:left;">COMFIRMED PASSWORD:<span>*</span> <span id='message' style="float:right;margin-left:20px"></span></div>
+                <div class="title">COMFIRMED PASSWORD:<span>*</span> <span id='message' style="float:right;margin-left:20px"></span></div>
                  <input type="password"  name="comfirmed_password" id="comfirmed_password" onkeyup="checkpassword()"  required class="text_field"  placeholder="ENTER YOUR COMFIRMED PASSWORD" title="ENTER YOUR COMFIRMED PASSWORD">
         </div>
 
@@ -80,6 +81,12 @@
         <button class="reg-btn submit-btn" type="button" onclick="_registration();" title="SUBMIT"> <i class="fa fa-check"></i> SUBMIT</button>
 
         </div>
+
+
+</div>
+
+
+</div>
 
 
         

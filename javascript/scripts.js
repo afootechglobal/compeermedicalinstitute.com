@@ -7,33 +7,46 @@ $(window).scroll(function() {
 
   if ($(this).scrollTop() >= 100 ){ 
   $("#scroll_up").fadeIn(800).css("display", "block");
-  $('#navbar').css("display", "none");
 
     }
-    else{
+    else {
     $('#scroll_up').fadeOut();
-    $('#navbar ').css("display", "block");
       
     }
   });
   
+
+// function scrolltodiv(divid, margintop){
+  // $('html, body').animate({scrollTop: $("#"+divid).offset().top - margintop}, 500);
+// }
+
+function _open_menu(){
+  $('.menu-back-div').animate({'margin-left':'0%'},200);
+  $('.side-menu-div').animate({'margin-left':'0px'},400);
+  }
   
-
-  function _get_panel(view_content) {
-    $('.overlay-back-div').html('<div class="success-back-div animated zoomIn"><img src="image/ajax_loader.gif"/></div>').fadeIn(1000);
-    var action='get_panel';
-    var dataString = 'action='+action+'&view_content='+view_content;
-    $.ajax({
-       type: "POST",
-       url: "config/code.php",
-       data: dataString,
-       cache: false,
-       success: function(html){
-          $('.overlay-back-div').html(html);
-       }
-    });
- }
-      
+  
+  function _close_menu(){
+  $('.menu-back-div').animate({'margin-left':'-100%'},400);
+  $('.side-menu-div').animate({'margin-left':'-250px'},200);
+  }
 
 
- 
+  function _expand_link1(){
+    $('#about_us').toggle(500);
+    $('#admission').fadeOut(0);
+    $('#program').fadeOut(0);
+  }
+  
+  function _expand_link2(){
+    $('#admission').toggle(500);
+    $('#about_us').fadeOut(0);
+    $('#program').fadeOut(0);
+  }
+   
+  function _expand_link3(){
+    $('#program').toggle(500);
+    $('#about_us').fadeOut(0);
+    $('#admission').fadeOut(0);
+  }
+   

@@ -17,7 +17,7 @@ if ($action=='registration'){
        $address=trim(strtoupper($_POST['address']));
        $country_id=trim(strtoupper($_POST['country_id']));
        $phonenumber=trim(strtoupper($_POST['phonenumber']));
-       $password=trim($_POST['password']);
+       $password=md5(trim($_POST['password']));
      
        $check_email=mysqli_query($conn,"SELECT * FROM student_registration_tab WHERE email='$email'");
        $email_count=mysqli_num_rows($check_email);
@@ -33,11 +33,12 @@ if ($action=='registration'){
   
 
         // get adminssion id
-        $counter_id='CMI-REG-STD';
+        $counter_id='REG-STD';
+        $date= date('Ymd');
         $query = mysqli_query($conn, "SELECT counter_value+1 AS counter_value FROM `counter_tab` WHERE counter_id='$counter_id' FOR UPDATE");
         $fetch=mysqli_fetch_array($query);
         $counter_value=$fetch['counter_value'];
-        $student_id=$counter_id.'-'.$counter_value;
+        $student_id=$counter_id.$date.$counter_value;
         mysqli_query($conn,"UPDATE counter_tab SET `counter_value`='$counter_value' WHERE counter_id='$counter_id'") or die('cannot update counter_tab');
        
   
